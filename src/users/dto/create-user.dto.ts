@@ -18,9 +18,9 @@ export class CreateUserDto {
   @IsString({ message: 'Eyy pilas con el nombre' })
   readonly name: string;
   readonly lastname: string;
-  @Validate(UniqueEmailValidator, { message: 'El correo ya fue registrado' })
   @IsNotEmpty()
   @IsEmail({}, { message: 'El  correo no tiene un formato valido' })
+  @Validate(UniqueEmailValidator, { message: 'El correo ya fue registrado' })
   readonly email: string;
   @IsNotEmpty()
   @IsString()

@@ -62,7 +62,7 @@ export class UsersService {
     }
   }
 
-  async findByEmail(email: string): Promise<User> {
+  async findByEmail(email: string): Promise<User | null> {
     return await this.userModel.findOne({ email });
   }
 }
